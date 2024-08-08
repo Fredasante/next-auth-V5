@@ -23,4 +23,6 @@ export const generateVerificationToken = async (email: string) => {
       expiresAt,
     },
   });
+
+  return verificationToken;
 };
