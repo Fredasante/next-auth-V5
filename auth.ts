@@ -21,7 +21,7 @@ export const {
   handlers: { GET, POST },
 } = NextAuth({
   pages: {
-    signIn: "/auth/signin",
+    signIn: "/auth/login",
     error: "/auth/error",
   },
   events: {
@@ -33,6 +33,16 @@ export const {
     },
   },
   callbacks: {
+    async signIn({ user, account }) {
+      if (account?.provider !== "credentials") return true;
+
+      const existingUser = await getUserById(user.id ?? "");
+
+      // If the email is not verified, prevent sign in
+      if (!existingUser?.emailVerified) return false;
+
+      return true;
+    },
     async session({ session, token }) {
       if (token.sub && session.user) {
         session.user.id = token.sub;
