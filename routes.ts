@@ -2,7 +2,7 @@
  * Represents an array of public routes.
  * @type {string[]}
  */
-export const PublicRoutes: string[] = ["/"];
+export const PublicRoutes: string[] = ["/", "/auth/new-verification"];
 
 /**
  * Defines the authentication routes. These routes will redirect logged in users to /settings.
