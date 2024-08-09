@@ -34,7 +34,7 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/Fredasante/next-auth-V5.git
-cd next-auth-v5
+cd next-auth-V5
 
 ```
 

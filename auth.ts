@@ -4,6 +4,7 @@ import authConfig from "./auth.config";
 import { db } from "@/lib/db";
 import { getUserById } from "./lib/user";
 import { UserRole } from "@prisma/client";
+import { getTwoFactorConfirmationByUserId } from "./lib/two-factor-confirmation";
 
 type ExtendedUser = DefaultSession["user"] & {
   role: UserRole;
@@ -40,6 +41,20 @@ export const {
 
       // If the email is not verified, prevent sign in
       if (!existingUser?.emailVerified) return false;
+
+      if (existingUser.isTwoFactorEnabled) {
+        const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(
+          existingUser.id
+        );
+
+        if (!twoFactorConfirmation) return false;
+
+        await db.twoFactorConfirmation.delete({
+          where: {
+            id: twoFactorConfirmation.id,
+          },
+        });
+      }
 
       return true;
     },
