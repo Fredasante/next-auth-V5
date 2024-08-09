@@ -13,8 +13,6 @@ const SettingsPage = () => {
 
   return (
     <div>
-      {JSON.stringify(user)}
-
       <form>
         <Button onClick={onClick} type="submit">
           Sign Out
