@@ -7,6 +7,11 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { UserRole } from "@prisma/client";
 
 const AdminPage = () => {
+  const onApiRouteClick = async () => {
+    const res = await fetch("/api/admin");
+    console.log(res);
+  };
+
   return (
     <Card className="lg:w-[600px]">
       <CardHeader>
@@ -19,7 +24,7 @@ const AdminPage = () => {
 
         <div className="flex flex-row justify-between items-center rounded-lg border p-3 shadow-md">
           <p className="text-sm font-medium">ADMIN only API route</p>
-          <Button>Click to test</Button>
+          <Button onClick={onApiRouteClick}>Click to test</Button>
         </div>
 
         <div className="flex flex-row justify-between items-center rounded-lg border p-3 shadow-md">
