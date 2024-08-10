@@ -5,6 +5,7 @@ This project is a Next.js application that includes authentication using NextAut
 - Sign-in with credentials, Google, and GitHub
 - Email verification
 - Forgot password functionality
+- Two Factor Authentication
 
 ## Table of Contents
 
@@ -108,4 +109,4 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser to access t
 
 ## Conclusion
 
-Your Next.js application is now set up with authentication, including credentials, Google, GitHub sign-in, email verification, and password reset functionalities. Ensure that your Prisma and Neon configurations are correct before deploying the application to production.
+Your Next.js application is now set up with authentication, including credentials, Google, GitHub sign-in, email verification, password reset functionalities and two factor authentication. Ensure that your Prisma and Neon configurations are correct before deploying the application to production.
