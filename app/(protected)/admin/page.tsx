@@ -5,11 +5,14 @@ import { FormSuccess } from "@/components/FormSuccess";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { UserRole } from "@prisma/client";
+import { toast } from "sonner";
 
 const AdminPage = () => {
   const onApiRouteClick = async () => {
     const res = await fetch("/api/admin");
-    console.log(res);
+    if (res.ok) {
+      toast.success("You are allowed to view this");
+    }
   };
 
   return (
