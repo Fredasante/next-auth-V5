@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const BASE_URL = process.env.FRONTEND_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
