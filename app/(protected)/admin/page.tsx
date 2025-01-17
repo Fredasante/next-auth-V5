@@ -18,9 +18,9 @@ const AdminPage = () => {
   return (
     <Card className="lg:w-[600px]">
       <CardHeader>
-        <p className="text-2xl font-semibold text-center">Admin</p>
+        <p className="text-xl lg:text-2xl font-semibold text-center">Admin</p>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-4 lg:space-y-5">
         <RoleGate allowedRole={UserRole.ADMIN}>
           <FormSuccess message="You are allowed to view this" />
         </RoleGate>
